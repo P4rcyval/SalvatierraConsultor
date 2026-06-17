@@ -1,0 +1,106 @@
+<div class="bg-slate-50 min-h-screen py-16">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <h1 class="text-4xl font-serif font-bold text-slate-900 mb-4">Centro de Información Tributaria y Legal 2026</h1>
+      <p class="text-slate-600 max-w-2xl mx-auto">
+        Acceda a la normativa actualizada y los requisitos esenciales para la gestión administrativa y técnica en el territorio nacional.
+      </p>
+    </div>
+
+    <!-- Tabs Container -->
+    <div class="bg-white shadow-xl rounded-xl overflow-hidden border border-slate-200">
+      <!-- Tab Navigation -->
+      <div class="flex border-b border-slate-200 bg-slate-100">
+        <button 
+          (click)="setActiveTab('seniat')"
+          [ngClass]="activeTab === 'seniat' ? 'bg-white text-slate-900 border-t-2 border-t-slate-900 font-bold' : 'text-slate-500 hover:text-slate-700'"
+          class="flex-1 py-4 px-6 text-sm uppercase tracking-widest transition-all">
+          Cartelera SENIAT
+        </button>
+        <button 
+          (click)="setActiveTab('saren')"
+          [ngClass]="activeTab === 'saren' ? 'bg-white text-slate-900 border-t-2 border-t-slate-900 font-bold' : 'text-slate-500 hover:text-slate-700'"
+          class="flex-1 py-4 px-6 text-sm uppercase tracking-widest transition-all">
+          Requisitos SAREN
+        </button>
+        <button 
+          (click)="setActiveTab('ivs')"
+          [ngClass]="activeTab === 'ivs' ? 'bg-white text-slate-900 border-t-2 border-t-slate-900 font-bold' : 'text-slate-500 hover:text-slate-700'"
+          class="flex-1 py-4 px-6 text-sm uppercase tracking-widest transition-all">
+          Normas IVS
+        </button>
+      </div>
+
+      <!-- Tab Content -->
+      <div class="p-8 md:p-12">
+        
+        <!-- Tab 1: SENIAT -->
+        <div *ngIf="activeTab === 'seniat'" class="animate-fadeIn">
+          <h2 class="text-2xl font-serif font-bold text-slate-900 mb-6 flex items-center">
+            <span class="mr-3">📋</span> Cartelera Fiscal Actualizada
+          </h2>
+          <div class="space-y-6">
+            <div class="p-4 bg-slate-50 border-l-4 border-slate-900 rounded">
+              <h3 class="font-bold text-slate-800">Calendario de Contribuyentes Especiales</h3>
+              <p class="text-slate-600 text-sm mt-1">Consulte las fechas de declaración y pago del IVA, ISLR y Retenciones según el último dígito del RIF.</p>
+            </div>
+            <div class="p-4 bg-slate-50 border-l-4 border-slate-900 rounded">
+              <h3 class="font-bold text-slate-800">Unidad Tributaria Vigente</h3>
+              <p class="text-slate-600 text-sm mt-1">Valor actualizado aplicable a multas, trámites y exoneraciones fiscales.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 2: SAREN -->
+        <div *ngIf="activeTab === 'saren'" class="animate-fadeIn">
+          <h2 class="text-2xl font-serif font-bold text-slate-900 mb-6 flex items-center">
+            <span class="mr-3">🏛️</span> Requisitos de Registro Mercantil
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="p-6 border border-slate-100 rounded-lg">
+              <h3 class="font-bold text-slate-900 mb-3 uppercase text-xs tracking-widest">Constitución de Pyme</h3>
+              <ul class="text-sm text-slate-600 space-y-2 list-disc list-inside">
+                <li>Reserva de nombre</li>
+                <li>Acta constitutiva visada</li>
+                <li>Cédulas de accionistas</li>
+                <li>Inventario de apertura</li>
+              </ul>
+            </div>
+            <div class="p-6 border border-slate-100 rounded-lg">
+              <h3 class="font-bold text-slate-900 mb-3 uppercase text-xs tracking-widest">Aumento de Capital</h3>
+              <ul class="text-sm text-slate-600 space-y-2 list-disc list-inside">
+                <li>Balance de situación</li>
+                <li>Informe de auditoría</li>
+                <li>Acta de asamblea</li>
+                <li>Depósito bancario</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 3: IVS -->
+        <div *ngIf="activeTab === 'ivs'" class="animate-fadeIn">
+          <h2 class="text-2xl font-serif font-bold text-slate-900 mb-6 flex items-center">
+            <span class="mr-3">📐</span> Estándares Internacionales de Valuación
+          </h2>
+          <div class="bg-slate-900 text-white p-8 rounded-lg shadow-inner">
+            <p class="italic font-light mb-6">"El cumplimiento de las Normas IVS garantiza la transparencia y consistencia en los informes de valoración de activos a nivel global."</p>
+            <div class="space-y-4">
+              <div class="flex items-start">
+                <span class="text-slate-400 mr-3 mt-1">✓</span>
+                <p class="text-sm"><span class="font-bold">IVS 104 Bases de Valor:</span> Definición de valor de mercado, valor de inversión y valor de liquidación.</p>
+              </div>
+              <div class="flex items-start">
+                <span class="text-slate-400 mr-3 mt-1">✓</span>
+                <p class="text-sm"><span class="font-bold">IVS 105 Enfoques de Valuación:</span> Aplicación de los métodos de comparación de mercado, ingresos y costos.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
